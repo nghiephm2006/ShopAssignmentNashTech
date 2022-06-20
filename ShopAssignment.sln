@@ -4,10 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.WebApp", "ShopAssignment.WebApp\ShopAssignment.WebApp.csproj", "{5E6E8982-E063-4416-A38B-90BDB60DC1C5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48} = {F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48}
+		{F5FAE7FD-44B4-490B-A408-422D4D913FED} = {F5FAE7FD-44B4-490B-A408-422D4D913FED}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAssignment.Data", "ShopAssignment.Data\ShopAssignment.Data.csproj", "{F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.Data", "ShopAssignment.Data\ShopAssignment.Data.csproj", "{F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAssignment.Business", "ShopAssignment.Business\ShopAssignment.Business.csproj", "{F5FAE7FD-44B4-490B-A408-422D4D913FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.Business", "ShopAssignment.Business\ShopAssignment.Business.csproj", "{F5FAE7FD-44B4-490B-A408-422D4D913FED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
