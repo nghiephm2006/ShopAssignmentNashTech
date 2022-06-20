@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopAssignment.Data.Context;
 
@@ -11,9 +12,10 @@ using ShopAssignment.Data.Context;
 namespace ShopAssignment.Data.Migrations
 {
     [DbContext(typeof(ShopAssignmentDBContext))]
-    partial class ShopAssignmentDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220620085544_IdentityDatabaseNew")]
+    partial class IdentityDatabaseNew
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,13 +99,6 @@ namespace ShopAssignment.Data.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -180,16 +175,6 @@ namespace ShopAssignment.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "cc3e2f70-e199-43d5-aa64-99bd6148b607",
-                            Description = "Administrator role",
-                            Name = "admin",
-                            NormalizedName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("ShopAssignment.Data.Entities.AppUser", b =>
@@ -256,27 +241,6 @@ namespace ShopAssignment.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "4d1aac39-1808-4e7a-83aa-b9190257e036",
-                            Dob = new DateTime(2000, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "nghiephm2006@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Nghiep",
-                            LastName = "Huynh",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "nghiephm2006@gmail.com",
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIFd6zM9LnemsTgsTGGYFNTDrgfMBxGEESXp2pqmiFhHfuQtiSgARwWlkkcXgOXepw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("ShopAssignment.Data.Entities.Cart", b =>
@@ -615,7 +579,7 @@ namespace ShopAssignment.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2022, 6, 20, 16, 0, 9, 933, DateTimeKind.Local).AddTicks(6522),
+                            DateCreated = new DateTime(2022, 6, 20, 15, 55, 43, 475, DateTimeKind.Local).AddTicks(5792),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             SeoAlias = 0,
