@@ -16,6 +16,7 @@ namespace ShopAssignment.Data.Configurations
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id);
+            builder.HasOne(x => x.AppUser).WithMany(x => x.Transactions).HasForeignKey(x => x.UserId);
 
         }
     }
