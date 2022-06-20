@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopAssignment.Data.Configurations;
 using ShopAssignment.Data.Entities;
+using ShopAssignment.Data.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace ShopAssignment.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Configuration using Fluent API
             modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
             modelBuilder.ApplyConfiguration(new CartConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
@@ -31,6 +33,9 @@ namespace ShopAssignment.Data.Context
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
 
+
+            //Data Seeding
+            modelBuilder.SeededData();
             //base.OnModelCreating(modelBuilder); 
         }
         public DbSet<Product> Products { get; set; }
