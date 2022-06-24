@@ -21,6 +21,7 @@ namespace ShopAssignment.Application.Catalog.Products
 
         Task AddViewcount(int productId);
 
+        Task<List<ProductViewModel>> GetAll();
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
 
         Task<int> AddImage(int productId, ProductImageCreateRequest request);
@@ -34,11 +35,5 @@ namespace ShopAssignment.Application.Catalog.Products
         Task<List<ProductImageViewModel>> GetListImages(int productId);
 
         Task<PagedResult<ProductViewModel>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request);
-
-        //Task<ApiResult<bool>> CategoryAssign(int id, CategoryAssignRequest request);
-
-        //Task<List<ProductViewModel>> GetFeaturedProducts(string languageId, int take);
-
-        Task<List<ProductViewModel>> GetLatestProducts(string languageId, int take);
     }
 }

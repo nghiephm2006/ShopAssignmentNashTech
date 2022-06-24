@@ -9,7 +9,7 @@ namespace ShopAssignment.ViewModels.Catalog.Products.Request
     {
         public string? Keyword { get; set; }
 
-        public string? LanguageId { get; set; }
+        public string LanguageId { get; set; }
 
         public int? CategoryId { get; set; }
     }
