@@ -78,6 +78,9 @@ namespace ShopAssignment.Application.Catalog.Products
                     {
                         Name = SystemConstants.ProductConstants.NA,
                         Description = SystemConstants.ProductConstants.NA,
+                        Details = SystemConstants.ProductConstants.NA,
+                        SeoDescription = SystemConstants.ProductConstants.NA,
+                        SeoTitle = SystemConstants.ProductConstants.NA,
                         SeoAlias = SystemConstants.ProductConstants.NA,
                         LanguageId = language.Id
                     });
@@ -381,105 +384,29 @@ namespace ShopAssignment.Application.Catalog.Products
             return pagedResult;
         }
 
-        //public async Task<ApiResult<bool>> CategoryAssign(int id, CategoryAssignRequest request)
-        //{
-        //    var user = await _context.Products.FindAsync(id);
-        //    if (user == null)
-        //    {
-        //        return new ApiErrorResult<bool>($"Sản phẩm với id {id} không tồn tại");
-        //    }
-        //    foreach (var category in request.Categories)
-        //    {
-        //        var productInCategory = await _context.ProductInCategories
-        //            .FirstOrDefaultAsync(x => x.CategoryId == int.Parse(category.Id)
-        //            && x.ProductId == id);
-        //        if (productInCategory != null && category.Selected == false)
-        //        {
-        //            _context.ProductInCategories.Remove(productInCategory);
-        //        }
-        //        else if (productInCategory == null && category.Selected)
-        //        {
-        //            await _context.ProductInCategories.AddAsync(new ProductInCategory()
-        //            {
-        //                CategoryId = int.Parse(category.Id),
-        //                ProductId = id
-        //            });
-        //        }
-        //    }
-        //    await _context.SaveChangesAsync();
-        //    return new ApiSuccessResult<bool>();
-        //}
-
-        //public async Task<List<ProductViewModel>> GetFeaturedProducts(string languageId, int take)
-        //{
-        //    //1. Select join
-        //    var query = from p in _context.Products
-        //                join pt in _context.ProductTranslations on p.Id equals pt.ProductId
-        //                join pic in _context.ProductInCategories on p.Id equals pic.ProductId into ppic
-        //                from pic in ppic.DefaultIfEmpty()
-        //                join pi in _context.ProductImages on p.Id equals pi.ProductId into ppi
-        //                from pi in ppi.DefaultIfEmpty()
-        //                join c in _context.Categories on pic.CategoryId equals c.Id into picc
-        //                from c in picc.DefaultIfEmpty()
-        //                where pt.LanguageId == languageId && (pi == null || pi.IsDefault == true)
-        //                && p.IsFeatured == true
-        //                select new { p, pt, pic, pi };
-
-        //    var data = await query.OrderByDescending(x => x.p.DateCreated).Take(take)
-        //        .Select(x => new ProductViewModel()
-        //        {
-        //            Id = x.p.Id,
-        //            Name = x.pt.Name,
-        //            DateCreated = x.p.DateCreated,
-        //            Description = x.pt.Description,
-        //            Details = x.pt.Details,
-        //            LanguageId = x.pt.LanguageId,
-        //            OriginalPrice = x.p.OriginalPrice,
-        //            Price = x.p.Price,
-        //            SeoAlias = x.pt.SeoAlias,
-        //            SeoDescription = x.pt.SeoDescription,
-        //            SeoTitle = x.pt.SeoTitle,
-        //            Stock = x.p.Stock,
-        //            ViewCount = x.p.ViewCount,
-        //            ThumbnailImage = x.pi.ImagePath
-        //        }).ToListAsync();
-
-        //    return data;
-        //}
-
-        public async Task<List<ProductViewModel>> GetLatestProducts(string languageId, int take)
+        public async Task<List<ProductViewModel>> GetAll()
         {
-            //1. Select join
             var query = from p in _context.Products
                         join pt in _context.ProductTranslations on p.Id equals pt.ProductId
-                        join pic in _context.ProductInCategories on p.Id equals pic.ProductId into ppic
-                        from pic in ppic.DefaultIfEmpty()
-                        join pi in _context.ProductImages on p.Id equals pi.ProductId into ppi
-                        from pi in ppi.DefaultIfEmpty()
-                        join c in _context.Categories on pic.CategoryId equals c.Id into picc
-                        from c in picc.DefaultIfEmpty()
-                        where pt.LanguageId == languageId && (pi == null || pi.IsDefault == true)
-                        select new { p, pt, pic, pi };
-
-            var data = await query.OrderByDescending(x => x.p.DateCreated).Take(take)
-                .Select(x => new ProductViewModel()
-                {
-                    Id = x.p.Id,
-                    Name = x.pt.Name,
-                    DateCreated = x.p.DateCreated,
-                    Description = x.pt.Description,
-                    Details = x.pt.Details,
-                    LanguageId = x.pt.LanguageId,
-                    OriginalPrice = x.p.OriginalPrice,
-                    Price = x.p.Price,
-                    SeoAlias = x.pt.SeoAlias,
-                    SeoDescription = x.pt.SeoDescription,
-                    SeoTitle = x.pt.SeoTitle,
-                    Stock = x.p.Stock,
-                    ViewCount = x.p.ViewCount,
-                    ThumbnailImage = x.pi.ImagePath
-                }).ToListAsync();
-
+                        join pic in _context.ProductInCategories on p.Id equals pic.ProductId
+                        join c in _context.Categories on pic.CategoryId equals c.Id
+                        select new { p, pt, pic };
+            var data = await query.Select(x => new ProductViewModel()
+            {
+                Id = x.p.Id,
+                Name = x.pt.Name,
+                DateCreated = x.p.DateCreated,
+                Description = x.pt.Description,
+                Details = x.pt.Details,
+                LanguageId = x.pt.LanguageId,
+                OriginalPrice = x.p.OriginalPrice,
+                Price = x.p.Price,
+                SeoAlias = x.pt.SeoAlias,
+                SeoDescription = x.pt.SeoDescription,
+                SeoTitle = x.pt.SeoTitle,
+                Stock = x.p.Stock,
+                ViewCount = x.p.ViewCount
+            }).ToListAsync();
             return data;
         }
     }
