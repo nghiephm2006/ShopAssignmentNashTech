@@ -15,16 +15,14 @@ namespace ShopAssignment.Application.Catalog.Products
 
         Task<ProductViewModel> GetById(int productId, string languageId);
 
-        Task<bool> UpdatePrice(int productId, decimal newPrice);
-
-        Task<bool> UpdateStock(int productId, int addedQuantity);
+        Task<bool> UpdatePriceNStock(int productId,PriceAndStockUpdateRequest request);
 
         Task AddViewcount(int productId);
 
         Task<List<ProductViewModel>> GetAll();
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
 
-        Task<int> AddImage(int productId, ProductImageCreateRequest request);
+        Task<int> AddImage(ProductImageCreateRequest request);
 
         Task<int> RemoveImage(int imageId);
 
@@ -33,7 +31,5 @@ namespace ShopAssignment.Application.Catalog.Products
         Task<ProductImageViewModel> GetImageById(int imageId);
 
         Task<List<ProductImageViewModel>> GetListImages(int productId);
-
-        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request);
     }
 }
