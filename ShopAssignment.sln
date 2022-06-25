@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.WebApp", "ShopAssignment.WebApp\ShopAssignment.WebApp.csproj", "{5E6E8982-E063-4416-A38B-90BDB60DC1C5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48} = {F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48}
-		{F5FAE7FD-44B4-490B-A408-422D4D913FED} = {F5FAE7FD-44B4-490B-A408-422D4D913FED}
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.Data", "ShopAssignment.Data\ShopAssignment.Data.csproj", "{F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48}"
@@ -14,15 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.Data", "Shop
 		{F0D7FDEA-E11D-475D-BA26-2A61AE314518} = {F0D7FDEA-E11D-475D-BA26-2A61AE314518}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.Business", "ShopAssignment.Business\ShopAssignment.Business.csproj", "{F5FAE7FD-44B4-490B-A408-422D4D913FED}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.Application", "ShopAssignment.Application\ShopAssignment.Application.csproj", "{D8EB60CD-6D51-431B-AE72-52AF833711F1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.ViewModels", "ShopAssignment.ViewModels\ShopAssignment.ViewModels.csproj", "{F0D7FDEA-E11D-475D-BA26-2A61AE314518}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.Utilities", "ShopAssignment.Utilities\ShopAssignment.Utilities.csproj", "{47330469-7B4B-4698-8C67-28C4E9B09F5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAssignment.WebAPI", "ShopAssignment.WebAPI\ShopAssignment.WebAPI.csproj", "{B8A7BB53-00AB-49B4-88F4-A968FA85A222}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.WebAPI", "ShopAssignment.WebAPI\ShopAssignment.WebAPI.csproj", "{B8A7BB53-00AB-49B4-88F4-A968FA85A222}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +35,6 @@ Global
 		{F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2E251E8-B0F4-4506-BBCA-A4EC52E7BC48}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5FAE7FD-44B4-490B-A408-422D4D913FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5FAE7FD-44B4-490B-A408-422D4D913FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5FAE7FD-44B4-490B-A408-422D4D913FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5FAE7FD-44B4-490B-A408-422D4D913FED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D8EB60CD-6D51-431B-AE72-52AF833711F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8EB60CD-6D51-431B-AE72-52AF833711F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8EB60CD-6D51-431B-AE72-52AF833711F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
