@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShopAssignment.Application.Catalog.Products;
+using ShopAssignment.ViewModels.Catalog.Products.ProductImages;
 using ShopAssignment.ViewModels.Catalog.Products.Request;
 
 namespace ShopAssignment.WebAPI.Controllers
@@ -78,25 +79,78 @@ namespace ShopAssignment.WebAPI.Controllers
             return Ok(result);
         }
 
-        [HttpPatch("{productId}/{newPrice}")]
-        public async Task<IActionResult> UpdatePrice(int productId, decimal newPrice)
+        [HttpPatch("{productId}/newPriceOrStock")]
+        public async Task<IActionResult> UpdatePrice(int productId, [FromBody] PriceAndStockUpdateRequest request)
         {
-            var isSuccessful = await _productService.UpdatePrice(productId, newPrice);
+            var isSuccessful = await _productService.UpdatePriceNStock(productId, request);
             if (!isSuccessful)
                 return BadRequest();
             return Ok();
         }
 
-        [HttpPatch("{productId}/{addedStock}")]
-        public async Task<IActionResult> UpdateStock(int productId, decimal addedStock)
+        //Images
+
+        [HttpGet("{productId}/images")]
+        public async Task<IActionResult> GetListImages(int productId)
         {
-            var isSuccessful = await _productService.UpdatePrice(productId, addedStock);
-            if (!isSuccessful)
+            var result = await _productService.GetListImages(productId);
+            if (result == null)
+                return BadRequest("Cannot find product");
+            return Ok(result);
+        }
+
+        [HttpPost("{productId}/images")]
+        public async Task<IActionResult> CreateImage([FromForm] ProductImageCreateRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var imageId = await _productService.AddImage(request);
+            if (imageId == 0)
                 return BadRequest();
+
+            var image = await _productService.GetImageById(imageId);
+
+            return CreatedAtAction(nameof(GetImageById), new { id = imageId }, image);
+        }
+
+        [HttpPut("{productId}/images/{imageId}")]
+        public async Task<IActionResult> UpdateImage(int imageId, [FromForm] ProductImageUpdateRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var result = await _productService.UpdateImage(imageId, request);
+            if (result == 0)
+                return BadRequest();
+
             return Ok();
         }
 
+        [HttpDelete("{productId}/images/{imageId}")]
+        public async Task<IActionResult> RemoveImage(int imageId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var result = await _productService.RemoveImage(imageId);
+            if (result == 0)
+                return BadRequest();
 
+            return Ok();
+        }
+
+        [HttpGet("{productId}/images/{imageId}")]
+        public async Task<IActionResult> GetImageById(int productId, int imageId)
+        {
+            var image = await _productService.GetImageById(imageId);
+            if (image == null)
+                return BadRequest("Cannot find product");
+            return Ok(image);
+        }
 
     }
 }
