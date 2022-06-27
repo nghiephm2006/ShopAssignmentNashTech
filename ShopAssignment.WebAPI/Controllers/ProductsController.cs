@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ShopAssignment.Application.Catalog.Products;
 using ShopAssignment.ViewModels.Catalog.Products.ProductImages;
 using ShopAssignment.ViewModels.Catalog.Products.Request;
@@ -17,7 +18,8 @@ namespace ShopAssignment.WebAPI.Controllers
             _productService = productService;
         }
 
-        [HttpGet] 
+        [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Get()
         {
             var products = await _productService.GetAll();
@@ -51,8 +53,8 @@ namespace ShopAssignment.WebAPI.Controllers
             var result = await _productService.Create(request);
             if (result == 0)
                 return BadRequest();
-            var product = await _productService.GetById(result,request.LanguageId);
-            return CreatedAtAction(nameof(GetById), new {id = result }, product);
+            var product = await _productService.GetById(result, request.LanguageId);
+            return CreatedAtAction(nameof(GetById), new { id = result }, product);
         }
 
         [HttpPut]
@@ -151,6 +153,5 @@ namespace ShopAssignment.WebAPI.Controllers
                 return BadRequest("Cannot find product");
             return Ok(image);
         }
-
     }
 }
