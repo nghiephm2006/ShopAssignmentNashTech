@@ -15,12 +15,15 @@ namespace ShopAssignment.Application.Catalog.Products
 
         Task<ProductViewModel> GetById(int productId, string languageId);
 
-        Task<bool> UpdatePriceNStock(int productId,PriceAndStockUpdateRequest request);
+        Task<bool> UpdatePriceNStock(int productId, PriceAndStockUpdateRequest request);
 
         Task AddViewcount(int productId);
 
         Task<List<ProductViewModel>> GetAll();
+
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
+
+        Task<List<ProductViewModel>> GetFeaturedProduct(string languageId);
 
         Task<int> AddImage(ProductImageCreateRequest request);
 

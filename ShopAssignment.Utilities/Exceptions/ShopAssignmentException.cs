@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShopAssignment.Utilities.Exceptions
+﻿namespace ShopAssignment.Utilities.Exceptions
 {
     public class ShopAssignmentException : Exception
     {

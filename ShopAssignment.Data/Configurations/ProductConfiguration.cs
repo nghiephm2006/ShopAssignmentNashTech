@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ShopAssignment.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ShopAssignment.Data.Configurations
 {
@@ -16,7 +13,6 @@ namespace ShopAssignment.Data.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id);
 
-
             builder.Property(x => x.Price).IsRequired();
 
             builder.Property(x => x.OriginalPrice).IsRequired();
@@ -24,8 +20,6 @@ namespace ShopAssignment.Data.Configurations
             builder.Property(x => x.Stock).IsRequired().HasDefaultValue(0);
 
             builder.Property(x => x.ViewCount).IsRequired().HasDefaultValue(0);
-
-
         }
     }
 }

@@ -2,11 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using ShopAssignment.Data.Entities;
 using ShopAssignment.Data.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopAssignment.Data.Extensions
 {
@@ -57,7 +52,79 @@ namespace ShopAssignment.Data.Extensions
                Price = 200000,
                Stock = 0,
                ViewCount = 0,
-           });
+               IsFeatured = true,
+           },
+           new Product()
+           {
+               Id = 2,
+               DateCreated = DateTime.Now,
+               OriginalPrice = 100000,
+               Price = 200000,
+               Stock = 0,
+               ViewCount = 0,
+               IsFeatured = true,
+           },
+           new Product()
+           {
+               Id = 3,
+               DateCreated = DateTime.Now,
+               OriginalPrice = 100000,
+               Price = 200000,
+               Stock = 0,
+               ViewCount = 0,
+               IsFeatured = true,
+           },
+           new Product()
+           {
+               Id = 4,
+               DateCreated = DateTime.Now,
+               OriginalPrice = 100000,
+               Price = 200000,
+               Stock = 0,
+               ViewCount = 0,
+               IsFeatured = true,
+           },
+           new Product()
+           {
+               Id = 5,
+               DateCreated = DateTime.Now,
+               OriginalPrice = 100000,
+               Price = 200000,
+               Stock = 0,
+               ViewCount = 0,
+               IsFeatured = true,
+           },
+           new Product()
+           {
+               Id = 6,
+               DateCreated = DateTime.Now,
+               OriginalPrice = 100000,
+               Price = 200000,
+               Stock = 0,
+               ViewCount = 0,
+               IsFeatured = true,
+           },
+           new Product()
+           {
+               Id = 7,
+               DateCreated = DateTime.Now,
+               OriginalPrice = 100000,
+               Price = 200000,
+               Stock = 0,
+               ViewCount = 0,
+               IsFeatured = true,
+           },
+           new Product()
+           {
+               Id = 8,
+               DateCreated = DateTime.Now,
+               OriginalPrice = 100000,
+               Price = 200000,
+               Stock = 0,
+               ViewCount = 0,
+               IsFeatured = true,
+           }
+           );
             modelBuilder.Entity<ProductTranslation>().HasData(
                  new ProductTranslation()
                  {
@@ -82,7 +149,258 @@ namespace ShopAssignment.Data.Extensions
                         SeoTitle = "Viet Tien Men T-Shirt",
                         Details = "Viet Tien Men T-Shirt",
                         Description = "Viet Tien Men T-Shirt"
-                    });
+                    },
+                     new ProductTranslation()
+                     {
+                         Id = 3,
+                         ProductId = 2,
+                         Name = "Áo sơ mi nam trắng Việt Tiến",
+                         LanguageId = "vi",
+                         SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                         SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                         SeoTitle = "Áo sơ mi nam trắng Việt Tiến",
+                         Details = "Áo sơ mi nam trắng Việt Tiến",
+                         Description = "Áo sơ mi nam trắng Việt Tiến"
+                     },
+                    new ProductTranslation()
+                    {
+                        Id = 4,
+                        ProductId = 2,
+                        Name = "Viet Tien Men T-Shirt",
+                        LanguageId = "en",
+                        SeoAlias = "viet-tien-men-t-shirt",
+                        SeoDescription = "Viet Tien Men T-Shirt",
+                        SeoTitle = "Viet Tien Men T-Shirt",
+                        Details = "Viet Tien Men T-Shirt",
+                        Description = "Viet Tien Men T-Shirt"
+                    },
+                     new ProductTranslation()
+                     {
+                         Id = 5,
+                         ProductId = 3,
+                         Name = "Áo sơ mi nam trắng Việt Tiến",
+                         LanguageId = "vi",
+                         SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                         SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                         SeoTitle = "Áo sơ mi nam trắng Việt Tiến",
+                         Details = "Áo sơ mi nam trắng Việt Tiến",
+                         Description = "Áo sơ mi nam trắng Việt Tiến"
+                     },
+                    new ProductTranslation()
+                    {
+                        Id = 6,
+                        ProductId = 3,
+                        Name = "Viet Tien Men T-Shirt",
+                        LanguageId = "en",
+                        SeoAlias = "viet-tien-men-t-shirt",
+                        SeoDescription = "Viet Tien Men T-Shirt",
+                        SeoTitle = "Viet Tien Men T-Shirt",
+                        Details = "Viet Tien Men T-Shirt",
+                        Description = "Viet Tien Men T-Shirt"
+                    },
+                     new ProductTranslation()
+                     {
+                         Id = 7,
+                         ProductId = 4,
+                         Name = "Áo sơ mi nam trắng Việt Tiến",
+                         LanguageId = "vi",
+                         SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                         SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                         SeoTitle = "Áo sơ mi nam trắng Việt Tiến",
+                         Details = "Áo sơ mi nam trắng Việt Tiến",
+                         Description = "Áo sơ mi nam trắng Việt Tiến"
+                     },
+                    new ProductTranslation()
+                    {
+                        Id = 8,
+                        ProductId = 4,
+                        Name = "Viet Tien Men T-Shirt",
+                        LanguageId = "en",
+                        SeoAlias = "viet-tien-men-t-shirt",
+                        SeoDescription = "Viet Tien Men T-Shirt",
+                        SeoTitle = "Viet Tien Men T-Shirt",
+                        Details = "Viet Tien Men T-Shirt",
+                        Description = "Viet Tien Men T-Shirt"
+                    },
+                     new ProductTranslation()
+                     {
+                         Id = 9,
+                         ProductId = 5,
+                         Name = "Áo sơ mi nam trắng Việt Tiến",
+                         LanguageId = "vi",
+                         SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                         SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                         SeoTitle = "Áo sơ mi nam trắng Việt Tiến",
+                         Details = "Áo sơ mi nam trắng Việt Tiến",
+                         Description = "Áo sơ mi nam trắng Việt Tiến"
+                     },
+                    new ProductTranslation()
+                    {
+                        Id = 10,
+                        ProductId = 5,
+                        Name = "Viet Tien Men T-Shirt",
+                        LanguageId = "en",
+                        SeoAlias = "viet-tien-men-t-shirt",
+                        SeoDescription = "Viet Tien Men T-Shirt",
+                        SeoTitle = "Viet Tien Men T-Shirt",
+                        Details = "Viet Tien Men T-Shirt",
+                        Description = "Viet Tien Men T-Shirt"
+                    },
+                     new ProductTranslation()
+                     {
+                         Id = 11,
+                         ProductId = 6,
+                         Name = "Áo sơ mi nam trắng Việt Tiến",
+                         LanguageId = "vi",
+                         SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                         SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                         SeoTitle = "Áo sơ mi nam trắng Việt Tiến",
+                         Details = "Áo sơ mi nam trắng Việt Tiến",
+                         Description = "Áo sơ mi nam trắng Việt Tiến"
+                     },
+                    new ProductTranslation()
+                    {
+                        Id = 12,
+                        ProductId = 6,
+                        Name = "Viet Tien Men T-Shirt",
+                        LanguageId = "en",
+                        SeoAlias = "viet-tien-men-t-shirt",
+                        SeoDescription = "Viet Tien Men T-Shirt",
+                        SeoTitle = "Viet Tien Men T-Shirt",
+                        Details = "Viet Tien Men T-Shirt",
+                        Description = "Viet Tien Men T-Shirt"
+                    },
+                     new ProductTranslation()
+                     {
+                         Id = 13,
+                         ProductId = 7,
+                         Name = "Áo sơ mi nam trắng Việt Tiến",
+                         LanguageId = "vi",
+                         SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                         SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                         SeoTitle = "Áo sơ mi nam trắng Việt Tiến",
+                         Details = "Áo sơ mi nam trắng Việt Tiến",
+                         Description = "Áo sơ mi nam trắng Việt Tiến"
+                     },
+                    new ProductTranslation()
+                    {
+                        Id = 14,
+                        ProductId = 7,
+                        Name = "Viet Tien Men T-Shirt",
+                        LanguageId = "en",
+                        SeoAlias = "viet-tien-men-t-shirt",
+                        SeoDescription = "Viet Tien Men T-Shirt",
+                        SeoTitle = "Viet Tien Men T-Shirt",
+                        Details = "Viet Tien Men T-Shirt",
+                        Description = "Viet Tien Men T-Shirt"
+                    },
+                     new ProductTranslation()
+                     {
+                         Id = 15,
+                         ProductId = 8,
+                         Name = "Áo sơ mi nam trắng Việt Tiến",
+                         LanguageId = "vi",
+                         SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                         SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                         SeoTitle = "Áo sơ mi nam trắng Việt Tiến",
+                         Details = "Áo sơ mi nam trắng Việt Tiến",
+                         Description = "Áo sơ mi nam trắng Việt Tiến"
+                     },
+                    new ProductTranslation()
+                    {
+                        Id = 16,
+                        ProductId = 8,
+                        Name = "Viet Tien Men T-Shirt",
+                        LanguageId = "en",
+                        SeoAlias = "viet-tien-men-t-shirt",
+                        SeoDescription = "Viet Tien Men T-Shirt",
+                        SeoTitle = "Viet Tien Men T-Shirt",
+                        Details = "Viet Tien Men T-Shirt",
+                        Description = "Viet Tien Men T-Shirt"
+                    }
+                    );
+            modelBuilder.Entity<ProductImage>().HasData(
+                new ProductImage()
+                {
+                    Id = 1,
+                    ProductId = 1,
+                    ImagePath = "/img/product-1.jpg",
+                    Caption = "Image",
+                    IsDefault = true,
+                    DateCreated = DateTime.UtcNow,
+                    SortOrder = 1,
+                },
+                new ProductImage()
+                {
+                    Id = 2,
+                    ProductId = 2,
+                    ImagePath = "/img/product-2.jpg",
+                    Caption = "Image",
+                    IsDefault = true,
+                    DateCreated = DateTime.UtcNow,
+                    SortOrder = 2,
+                },
+                new ProductImage()
+                {
+                    Id = 3,
+                    ProductId = 3,
+                    ImagePath = "/img/product-3.jpg",
+                    Caption = "Image",
+                    IsDefault = true,
+                    DateCreated = DateTime.UtcNow,
+                    SortOrder = 3,
+                },
+                new ProductImage()
+                {
+                    Id = 4,
+                    ProductId = 4,
+                    ImagePath = "/img/product-4.jpg",
+                    Caption = "Image",
+                    IsDefault = true,
+                    DateCreated = DateTime.UtcNow,
+                    SortOrder = 4,
+                },
+                new ProductImage()
+                {
+                    Id = 5,
+                    ProductId = 5,
+                    ImagePath = "/img/product-5.jpg",
+                    Caption = "Image",
+                    IsDefault = true,
+                    DateCreated = DateTime.UtcNow,
+                    SortOrder = 5,
+                },
+                new ProductImage()
+                {
+                    Id = 6,
+                    ProductId = 6,
+                    ImagePath = "/img/product-6.jpg",
+                    Caption = "Image",
+                    IsDefault = true,
+                    DateCreated = DateTime.UtcNow,
+                    SortOrder = 6,
+                },
+                new ProductImage()
+                {
+                    Id = 7,
+                    ProductId = 7,
+                    ImagePath = "/img/product-7.jpg",
+                    Caption = "Image",
+                    IsDefault = true,
+                    DateCreated = DateTime.UtcNow,
+                    SortOrder = 7,
+                },
+                new ProductImage()
+                {
+                    Id = 8,
+                    ProductId = 8,
+                    ImagePath = "/img/product-8.jpg",
+                    Caption = "Image",
+                    IsDefault = true,
+                    DateCreated = DateTime.UtcNow,
+                    SortOrder = 8,
+                }
+                );
             modelBuilder.Entity<ProductInCategory>().HasData(
                 new ProductInCategory() { ProductId = 1, CategoryId = 1 }
                 );

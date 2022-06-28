@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShopAssignment.ViewModels.System.Users.Request
+﻿namespace ShopAssignment.ViewModels.System.Users.Request
 {
     public class LoginRequest
     {

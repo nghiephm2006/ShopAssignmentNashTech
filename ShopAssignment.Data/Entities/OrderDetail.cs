@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShopAssignment.Data.Entities
+﻿namespace ShopAssignment.Data.Entities
 {
     public class OrderDetail
     {
@@ -16,6 +10,5 @@ namespace ShopAssignment.Data.Entities
         public Order Order { get; set; }
 
         public Product Product { get; set; }
-
     }
 }

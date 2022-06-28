@@ -4,11 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using ShopAssignment.Data.Configurations;
 using ShopAssignment.Data.Entities;
 using ShopAssignment.Data.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopAssignment.Data.Context
 {
@@ -65,5 +60,6 @@ namespace ShopAssignment.Data.Context
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Slide> Slides { get; set; }
     }
 }

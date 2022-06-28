@@ -1,9 +1,6 @@
-﻿using ShopAssignment.Data.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using ShopAssignment.Data.Entities;
 
 namespace ShopAssignment.Data.Configurations
 {
@@ -15,7 +12,6 @@ namespace ShopAssignment.Data.Configurations
             builder.Property(x => x.FirstName).IsRequired().HasMaxLength(200);
             builder.Property(x => x.LastName).IsRequired().HasMaxLength(200);
             builder.Property(x => x.Dob).IsRequired();
-
         }
     }
 }

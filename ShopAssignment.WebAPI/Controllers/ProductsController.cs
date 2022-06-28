@@ -33,6 +33,13 @@ namespace ShopAssignment.WebAPI.Controllers
             return Ok(products);
         }
 
+        [HttpGet("featured/{languageId}")]
+        public async Task<IActionResult> GetFeaturedProduct(string languageId)
+        {
+            var products = await _productService.GetFeaturedProduct(languageId);
+            return Ok(products);
+        }
+
         [HttpGet("{productId}/{languageId}")]
         public async Task<IActionResult> GetById(int productId, string languageId)
         {

@@ -185,7 +185,7 @@ namespace ShopAssignment.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "ea9ada1a-d0f4-4d66-be1e-4b5920193208",
+                            ConcurrencyStamp = "a855c3d0-9253-44e5-a01e-a6fd59707807",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -262,7 +262,7 @@ namespace ShopAssignment.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3524a87b-b3f5-435a-a52f-ef6a457c2244",
+                            ConcurrencyStamp = "f6d4f381-570a-4ca1-9f28-57b5f7d04b05",
                             Dob = new DateTime(2000, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "nghiephm2006@gmail.com",
                             EmailConfirmed = true,
@@ -271,7 +271,7 @@ namespace ShopAssignment.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "nghiephm2006@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ7tJITYUR44hcosBzd16edjFhWEM3my0+dF2fL1fYRLEBYZ0MpIIpfhd11v2RS4Ig==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENixrR2xxzN5oUDE3/FqEo81VnYr2WnF/oUD3gQbhUKBQrw0/fBW81op5tP5R0FaFg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -615,7 +615,78 @@ namespace ShopAssignment.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2022, 6, 28, 11, 21, 50, 318, DateTimeKind.Local).AddTicks(2089),
+                            DateCreated = new DateTime(2022, 6, 28, 15, 1, 41, 611, DateTimeKind.Local).AddTicks(9833),
+                            IsFeatured = true,
+                            OriginalPrice = 100000m,
+                            Price = 200000m,
+                            Stock = 0,
+                            ViewCount = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DateCreated = new DateTime(2022, 6, 28, 15, 1, 41, 611, DateTimeKind.Local).AddTicks(9846),
+                            IsFeatured = true,
+                            OriginalPrice = 100000m,
+                            Price = 200000m,
+                            Stock = 0,
+                            ViewCount = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DateCreated = new DateTime(2022, 6, 28, 15, 1, 41, 611, DateTimeKind.Local).AddTicks(9848),
+                            IsFeatured = true,
+                            OriginalPrice = 100000m,
+                            Price = 200000m,
+                            Stock = 0,
+                            ViewCount = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DateCreated = new DateTime(2022, 6, 28, 15, 1, 41, 611, DateTimeKind.Local).AddTicks(9849),
+                            IsFeatured = true,
+                            OriginalPrice = 100000m,
+                            Price = 200000m,
+                            Stock = 0,
+                            ViewCount = 0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DateCreated = new DateTime(2022, 6, 28, 15, 1, 41, 611, DateTimeKind.Local).AddTicks(9851),
+                            IsFeatured = true,
+                            OriginalPrice = 100000m,
+                            Price = 200000m,
+                            Stock = 0,
+                            ViewCount = 0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DateCreated = new DateTime(2022, 6, 28, 15, 1, 41, 611, DateTimeKind.Local).AddTicks(9852),
+                            IsFeatured = true,
+                            OriginalPrice = 100000m,
+                            Price = 200000m,
+                            Stock = 0,
+                            ViewCount = 0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DateCreated = new DateTime(2022, 6, 28, 15, 1, 41, 611, DateTimeKind.Local).AddTicks(9853),
+                            IsFeatured = true,
+                            OriginalPrice = 100000m,
+                            Price = 200000m,
+                            Stock = 0,
+                            ViewCount = 0
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DateCreated = new DateTime(2022, 6, 28, 15, 1, 41, 611, DateTimeKind.Local).AddTicks(9854),
+                            IsFeatured = true,
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -664,6 +735,96 @@ namespace ShopAssignment.Data.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Caption = "Image",
+                            DateCreated = new DateTime(2022, 6, 28, 8, 1, 41, 611, DateTimeKind.Utc).AddTicks(9914),
+                            FileSize = 0L,
+                            ImagePath = "/img/product-1.jpg",
+                            IsDefault = true,
+                            ProductId = 1,
+                            SortOrder = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Caption = "Image",
+                            DateCreated = new DateTime(2022, 6, 28, 8, 1, 41, 611, DateTimeKind.Utc).AddTicks(9916),
+                            FileSize = 0L,
+                            ImagePath = "/img/product-2.jpg",
+                            IsDefault = true,
+                            ProductId = 2,
+                            SortOrder = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Caption = "Image",
+                            DateCreated = new DateTime(2022, 6, 28, 8, 1, 41, 611, DateTimeKind.Utc).AddTicks(9918),
+                            FileSize = 0L,
+                            ImagePath = "/img/product-3.jpg",
+                            IsDefault = true,
+                            ProductId = 3,
+                            SortOrder = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Caption = "Image",
+                            DateCreated = new DateTime(2022, 6, 28, 8, 1, 41, 611, DateTimeKind.Utc).AddTicks(9919),
+                            FileSize = 0L,
+                            ImagePath = "/img/product-4.jpg",
+                            IsDefault = true,
+                            ProductId = 4,
+                            SortOrder = 4
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Caption = "Image",
+                            DateCreated = new DateTime(2022, 6, 28, 8, 1, 41, 611, DateTimeKind.Utc).AddTicks(9920),
+                            FileSize = 0L,
+                            ImagePath = "/img/product-5.jpg",
+                            IsDefault = true,
+                            ProductId = 5,
+                            SortOrder = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Caption = "Image",
+                            DateCreated = new DateTime(2022, 6, 28, 8, 1, 41, 611, DateTimeKind.Utc).AddTicks(9921),
+                            FileSize = 0L,
+                            ImagePath = "/img/product-6.jpg",
+                            IsDefault = true,
+                            ProductId = 6,
+                            SortOrder = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Caption = "Image",
+                            DateCreated = new DateTime(2022, 6, 28, 8, 1, 41, 611, DateTimeKind.Utc).AddTicks(9921),
+                            FileSize = 0L,
+                            ImagePath = "/img/product-7.jpg",
+                            IsDefault = true,
+                            ProductId = 7,
+                            SortOrder = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Caption = "Image",
+                            DateCreated = new DateTime(2022, 6, 28, 8, 1, 41, 611, DateTimeKind.Utc).AddTicks(9922),
+                            FileSize = 0L,
+                            ImagePath = "/img/product-8.jpg",
+                            IsDefault = true,
+                            ProductId = 8,
+                            SortOrder = 8
+                        });
                 });
 
             modelBuilder.Entity("ShopAssignment.Data.Entities.ProductInCategory", b =>
@@ -761,6 +922,174 @@ namespace ShopAssignment.Data.Migrations
                             LanguageId = "en",
                             Name = "Viet Tien Men T-Shirt",
                             ProductId = 1,
+                            SeoAlias = "viet-tien-men-t-shirt",
+                            SeoDescription = "Viet Tien Men T-Shirt",
+                            SeoTitle = "Viet Tien Men T-Shirt"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Áo sơ mi nam trắng Việt Tiến",
+                            Details = "Áo sơ mi nam trắng Việt Tiến",
+                            LanguageId = "vi",
+                            Name = "Áo sơ mi nam trắng Việt Tiến",
+                            ProductId = 2,
+                            SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                            SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                            SeoTitle = "Áo sơ mi nam trắng Việt Tiến"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Viet Tien Men T-Shirt",
+                            Details = "Viet Tien Men T-Shirt",
+                            LanguageId = "en",
+                            Name = "Viet Tien Men T-Shirt",
+                            ProductId = 2,
+                            SeoAlias = "viet-tien-men-t-shirt",
+                            SeoDescription = "Viet Tien Men T-Shirt",
+                            SeoTitle = "Viet Tien Men T-Shirt"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Áo sơ mi nam trắng Việt Tiến",
+                            Details = "Áo sơ mi nam trắng Việt Tiến",
+                            LanguageId = "vi",
+                            Name = "Áo sơ mi nam trắng Việt Tiến",
+                            ProductId = 3,
+                            SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                            SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                            SeoTitle = "Áo sơ mi nam trắng Việt Tiến"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Viet Tien Men T-Shirt",
+                            Details = "Viet Tien Men T-Shirt",
+                            LanguageId = "en",
+                            Name = "Viet Tien Men T-Shirt",
+                            ProductId = 3,
+                            SeoAlias = "viet-tien-men-t-shirt",
+                            SeoDescription = "Viet Tien Men T-Shirt",
+                            SeoTitle = "Viet Tien Men T-Shirt"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Áo sơ mi nam trắng Việt Tiến",
+                            Details = "Áo sơ mi nam trắng Việt Tiến",
+                            LanguageId = "vi",
+                            Name = "Áo sơ mi nam trắng Việt Tiến",
+                            ProductId = 4,
+                            SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                            SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                            SeoTitle = "Áo sơ mi nam trắng Việt Tiến"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Viet Tien Men T-Shirt",
+                            Details = "Viet Tien Men T-Shirt",
+                            LanguageId = "en",
+                            Name = "Viet Tien Men T-Shirt",
+                            ProductId = 4,
+                            SeoAlias = "viet-tien-men-t-shirt",
+                            SeoDescription = "Viet Tien Men T-Shirt",
+                            SeoTitle = "Viet Tien Men T-Shirt"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Áo sơ mi nam trắng Việt Tiến",
+                            Details = "Áo sơ mi nam trắng Việt Tiến",
+                            LanguageId = "vi",
+                            Name = "Áo sơ mi nam trắng Việt Tiến",
+                            ProductId = 5,
+                            SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                            SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                            SeoTitle = "Áo sơ mi nam trắng Việt Tiến"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "Viet Tien Men T-Shirt",
+                            Details = "Viet Tien Men T-Shirt",
+                            LanguageId = "en",
+                            Name = "Viet Tien Men T-Shirt",
+                            ProductId = 5,
+                            SeoAlias = "viet-tien-men-t-shirt",
+                            SeoDescription = "Viet Tien Men T-Shirt",
+                            SeoTitle = "Viet Tien Men T-Shirt"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "Áo sơ mi nam trắng Việt Tiến",
+                            Details = "Áo sơ mi nam trắng Việt Tiến",
+                            LanguageId = "vi",
+                            Name = "Áo sơ mi nam trắng Việt Tiến",
+                            ProductId = 6,
+                            SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                            SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                            SeoTitle = "Áo sơ mi nam trắng Việt Tiến"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "Viet Tien Men T-Shirt",
+                            Details = "Viet Tien Men T-Shirt",
+                            LanguageId = "en",
+                            Name = "Viet Tien Men T-Shirt",
+                            ProductId = 6,
+                            SeoAlias = "viet-tien-men-t-shirt",
+                            SeoDescription = "Viet Tien Men T-Shirt",
+                            SeoTitle = "Viet Tien Men T-Shirt"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Description = "Áo sơ mi nam trắng Việt Tiến",
+                            Details = "Áo sơ mi nam trắng Việt Tiến",
+                            LanguageId = "vi",
+                            Name = "Áo sơ mi nam trắng Việt Tiến",
+                            ProductId = 7,
+                            SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                            SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                            SeoTitle = "Áo sơ mi nam trắng Việt Tiến"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "Viet Tien Men T-Shirt",
+                            Details = "Viet Tien Men T-Shirt",
+                            LanguageId = "en",
+                            Name = "Viet Tien Men T-Shirt",
+                            ProductId = 7,
+                            SeoAlias = "viet-tien-men-t-shirt",
+                            SeoDescription = "Viet Tien Men T-Shirt",
+                            SeoTitle = "Viet Tien Men T-Shirt"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Description = "Áo sơ mi nam trắng Việt Tiến",
+                            Details = "Áo sơ mi nam trắng Việt Tiến",
+                            LanguageId = "vi",
+                            Name = "Áo sơ mi nam trắng Việt Tiến",
+                            ProductId = 8,
+                            SeoAlias = "ao-so-mi-nam-trang-viet-tien",
+                            SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
+                            SeoTitle = "Áo sơ mi nam trắng Việt Tiến"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Description = "Viet Tien Men T-Shirt",
+                            Details = "Viet Tien Men T-Shirt",
+                            LanguageId = "en",
+                            Name = "Viet Tien Men T-Shirt",
+                            ProductId = 8,
                             SeoAlias = "viet-tien-men-t-shirt",
                             SeoDescription = "Viet Tien Men T-Shirt",
                             SeoTitle = "Viet Tien Men T-Shirt"
