@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopAssignment.Application.System.Users;
 using ShopAssignment.ViewModels.System.Users.Request;

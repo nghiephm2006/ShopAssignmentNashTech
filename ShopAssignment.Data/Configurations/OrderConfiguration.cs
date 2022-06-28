@@ -1,9 +1,6 @@
-﻿using ShopAssignment.Data.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using ShopAssignment.Data.Entities;
 
 namespace ShopAssignment.Data.Configurations
 {
@@ -23,13 +20,10 @@ namespace ShopAssignment.Data.Configurations
 
             builder.Property(x => x.CustomerAddress).IsRequired().HasMaxLength(200);
 
-
             builder.Property(x => x.CustomerName).IsRequired().HasMaxLength(200);
-
 
             builder.Property(x => x.CustomerPhoneNumber).IsRequired().HasMaxLength(200);
             builder.HasOne(x => x.AppUser).WithMany(x => x.Orders).HasForeignKey(x => x.UserId);
-
         }
     }
 }

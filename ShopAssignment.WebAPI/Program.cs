@@ -1,4 +1,3 @@
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -8,10 +7,10 @@ using Microsoft.OpenApi.Models;
 using ShopAssignment.Application.Catalog.Products;
 using ShopAssignment.Application.Common;
 using ShopAssignment.Application.System.Users;
+using ShopAssignment.Application.Utilities;
 using ShopAssignment.Data.Context;
 using ShopAssignment.Data.Entities;
 using ShopAssignment.Utilities.Constants;
-using ShopAssignment.ViewModels.System.Users.Request;
 using ShopAssignment.ViewModels.System.Users.Validator;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +26,7 @@ builder.Services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
 builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
 builder.Services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ISlideService, SlideService>();
 
 //builder.Services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
 //builder.Services.AddTransient<IValidator<RegisterRequest>, RegisterRequestValidator>();

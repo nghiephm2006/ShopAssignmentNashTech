@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ShopAssignment.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ShopAssignment.Data.Configurations
 {

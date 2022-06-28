@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShopAssignment.Data.Entities
+﻿namespace ShopAssignment.Data.Entities
 {
     public class ProductTranslation
     {
@@ -22,6 +16,5 @@ namespace ShopAssignment.Data.Entities
         public Product Product { get; set; }
 
         public Language Language { get; set; }
-
     }
 }

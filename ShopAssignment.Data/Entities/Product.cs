@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ShopAssignment.Data.Entities
+﻿namespace ShopAssignment.Data.Entities
 {
     public class Product
     {
@@ -14,7 +8,7 @@ namespace ShopAssignment.Data.Entities
         public int Stock { set; get; }
         public int ViewCount { set; get; }
         public DateTime DateCreated { set; get; }
-        public int SeoAlias { get; set; }
+        public bool? IsFeatured { get; set; }
         public List<ProductInCategory> ProductInCategories { get; set; }
 
         public List<OrderDetail> OrderDetails { get; set; }
@@ -23,7 +17,5 @@ namespace ShopAssignment.Data.Entities
 
         public List<ProductTranslation> ProductTranslations { get; set; }
         public List<ProductImage> ProductImages { get; set; }
-
-
     }
 }

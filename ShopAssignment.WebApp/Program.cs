@@ -1,13 +1,17 @@
 using FluentValidation.AspNetCore;
 using LazZiya.ExpressLocalization;
 using Microsoft.AspNetCore.Localization;
+using ShopAssignment.ApiIntegration;
+using ShopAssignment.ApiIntegration.Interface;
 using ShopAssignment.ViewModels.System.Users.Validator;
 using ShopAssignment.WebApp.LocalizationResources;
+
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient();
+
 var cultures = new[]
 {
                 new CultureInfo("en"),
@@ -44,6 +48,15 @@ builder.Services.AddControllersWithViews().AddFluentValidation(fv => fv.Register
                         o.DefaultRequestCulture = new RequestCulture("vi");
                     };
                 });
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+});
+
+//DI
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddTransient<ISlideApiClient, SlideApiClient>();
+builder.Services.AddTransient<IProductApiClient, ProductApiClient>();
 
 var app = builder.Build();
 
@@ -61,6 +74,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
 app.UseRequestLocalization();
 app.MapControllerRoute(
     name: "default",

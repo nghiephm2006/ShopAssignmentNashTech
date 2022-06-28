@@ -22,7 +22,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShopAssignment.ApiIntegration\ShopAssignment.ApiIntegration.csproj" />
     <ProjectReference Include="..\ShopAssignment.ViewModels\ShopAssignment.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="LocalizationResources\ViewLocalizationResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LocalizationResources\ViewLocalizationResource.vi.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

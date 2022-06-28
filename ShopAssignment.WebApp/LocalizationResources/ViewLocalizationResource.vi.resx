@@ -123,6 +123,12 @@
   <data name="24/7 Support" xml:space="preserve">
     <value>Hỗ trợ 24/7</value>
   </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Danh Mục</value>
+  </data>
+  <data name="Feature Products" xml:space="preserve">
+    <value>Sản Phẩm Nổi Bật</value>
+  </data>
   <data name="Free Shipping" xml:space="preserve">
     <value>Giao hàng miễn phí</value>
   </data>

@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShopAssignment.ViewModels.Catalog.Products.ProductImages
+﻿namespace ShopAssignment.ViewModels.Catalog.Products.ProductImages
 {
     public class ProductImageViewModel
     {

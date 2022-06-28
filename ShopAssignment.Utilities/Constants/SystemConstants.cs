@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShopAssignment.Utilities.Constants
+﻿namespace ShopAssignment.Utilities.Constants
 {
     public class SystemConstants
     {

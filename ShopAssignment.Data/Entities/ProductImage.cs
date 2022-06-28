@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShopAssignment.Data.Entities
+﻿namespace ShopAssignment.Data.Entities
 {
     public class ProductImage
     {
