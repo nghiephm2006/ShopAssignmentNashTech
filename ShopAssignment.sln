@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.Utilities", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopAssignment.WebAPI", "ShopAssignment.WebAPI\ShopAssignment.WebAPI.csproj", "{B8A7BB53-00AB-49B4-88F4-A968FA85A222}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopAssignment.ApiIntegration", "ShopAssignment.ApiIntegration\ShopAssignment.ApiIntegration.csproj", "{7347AA42-E36F-4DBE-8297-7C1368DEC683}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B8A7BB53-00AB-49B4-88F4-A968FA85A222}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A7BB53-00AB-49B4-88F4-A968FA85A222}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A7BB53-00AB-49B4-88F4-A968FA85A222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7347AA42-E36F-4DBE-8297-7C1368DEC683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7347AA42-E36F-4DBE-8297-7C1368DEC683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7347AA42-E36F-4DBE-8297-7C1368DEC683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7347AA42-E36F-4DBE-8297-7C1368DEC683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
