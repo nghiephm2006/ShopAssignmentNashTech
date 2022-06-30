@@ -123,8 +123,14 @@
   <data name="24/7 Support" xml:space="preserve">
     <value>Hỗ trợ 24/7</value>
   </data>
+  <data name="Add To Cart" xml:space="preserve">
+    <value>Thêm Vào Giỏ Hàng</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Danh Mục</value>
+  </data>
+  <data name="categoryUrl" xml:space="preserve">
+    <value>danh-muc</value>
   </data>
   <data name="Feature Products" xml:space="preserve">
     <value>Sản Phẩm Nổi Bật</value>
@@ -135,10 +141,16 @@
   <data name="Login" xml:space="preserve">
     <value>Đăng nhập</value>
   </data>
+  <data name="productUrl" xml:space="preserve">
+    <value>san-pham</value>
+  </data>
   <data name="Quality Product" xml:space="preserve">
     <value>Chất lượng cao</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Đăng ký</value>
+  </data>
+  <data name="View Detail" xml:space="preserve">
+    <value>Xem Chi Tiết</value>
   </data>
 </root>
