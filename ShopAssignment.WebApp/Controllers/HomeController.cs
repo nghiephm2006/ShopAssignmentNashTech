@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using ShopAssignment.ApiIntegration.Interface;
-using ShopAssignment.Utilities.Constants;
 using ShopAssignment.WebApp.Models;
 using System.Diagnostics;
 using System.Globalization;
@@ -13,10 +12,13 @@ namespace ShopAssignment.WebApp.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ISlideApiClient _slideApiClient;
         private readonly IProductApiClient _prodctApiClient;
+        private readonly ICategoryApiClient _categoryApiClient;
 
         public HomeController(ILogger<HomeController> logger, ISlideApiClient slideApiClient,
-            IProductApiClient productApiClient)
+            IProductApiClient productApiClient,
+            ICategoryApiClient categoryApiClient)
         {
+            _categoryApiClient = categoryApiClient;
             _prodctApiClient = productApiClient;
             _slideApiClient = slideApiClient;
             _logger = logger;
@@ -28,7 +30,8 @@ namespace ShopAssignment.WebApp.Controllers
             var viewModel = new HomeViewModel
             {
                 Slides = await _slideApiClient.GetAll(),
-                FeaturedProducts = await _prodctApiClient.GetFeaturedProduct(culture)
+                FeaturedProducts = await _prodctApiClient.GetFeaturedProduct(culture),
+                Categories = await _categoryApiClient.GetAll(culture)
             };
 
             return View(viewModel);
