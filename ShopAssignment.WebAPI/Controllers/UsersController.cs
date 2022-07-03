@@ -16,7 +16,7 @@ namespace ShopAssignment.WebAPI.Controllers
             _userService = userService;
         }
 
-        [HttpPost("auhenticate")]
+        [HttpPost("authenticate")]
         [AllowAnonymous]
         public async Task<IActionResult> Authenticate([FromForm] LoginRequest request)
         {
