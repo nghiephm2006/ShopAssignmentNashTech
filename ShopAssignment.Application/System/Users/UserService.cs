@@ -32,10 +32,10 @@ namespace ShopAssignment.Application.System.Users
                 return null;
             }
             var result = await _signInManager.PasswordSignInAsync(user, request.Password, request.RememberMe, true);
-            if (!result.Succeeded)
-            {
-                return null;
-            }
+            //if (!result.Succeeded)
+            //{
+            //    return null;
+            //}
             var roles = _userManager.GetRolesAsync(user);
             var claims = new[] {
             new Claim(ClaimTypes.Email,user.Email),

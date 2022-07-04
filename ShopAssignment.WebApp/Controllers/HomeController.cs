@@ -30,8 +30,7 @@ namespace ShopAssignment.WebApp.Controllers
             var viewModel = new HomeViewModel
             {
                 Slides = await _slideApiClient.GetAll(),
-                FeaturedProducts = await _prodctApiClient.GetFeaturedProduct(culture),
-                Categories = await _categoryApiClient.GetAll(culture)
+                FeaturedProducts = await _prodctApiClient.GetFeaturedProduct(culture)
             };
 
             return View(viewModel);
