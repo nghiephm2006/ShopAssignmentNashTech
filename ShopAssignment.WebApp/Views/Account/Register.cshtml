@@ -1,0 +1,101 @@
+﻿@using ShopAssignment.ViewModels.System.Users.Request
+
+@model RegisterRequest
+@{
+    Layout = null;
+    var culture = CultureInfo.CurrentCulture.Name;
+}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="~/css/styleLogin.css">
+
+	</head>
+	<body class="img js-fullheight" style="background-image: url('~/img/bg.jpg');">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Register</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<a class="nav-item nav-link">Have an account?</a>
+				  <a class="nav-item nav-link" href="/@culture/Account/Login"><localize>Login</localize></a>
+				  <p class="w-100 text-center">&mdash; Your personal information &mdash;</p>
+		      	<form asp-action="Register" asp-controller="Account" class="signin-form" method="post">
+
+		      		<div class="form-group">
+						  <label class="control-label" for="inputFname1">First name <sup>*</sup></label>
+						  <input type="text" asp-for="FirstName" placeholder="First Name" class="form-control">
+                <span asp-validation-for="FirstName" class="text-error"></span>
+		      		</div>
+
+					  <div class="form-group">
+						  <label class="control-label" for="inputLnam">Last name <sup>*</sup></label>
+						  <input type="text" asp-for="LastName" placeholder="Last Name" class="form-control">
+                <span asp-validation-for="LastName" class="text-error"></span>
+		      		</div>
+
+					  <div class="form-group">
+						  <label class="control-label" for="input_date">Date <sup>*</sup></label>
+						  <input type="date" asp-for="Dob" placeholder="Date Of Birth" class="form-control">
+		      		</div>
+
+					  <div class="form-group">
+						  <label class="control-label" for="input_email">Email <sup>*</sup></label>
+						  <input type="text" asp-for="Email" placeholder="Email" class="form-control">
+                <span asp-validation-for="Email" class="text-error"></span>
+		      		</div>
+
+					  <div class="form-group">
+						  <label class="control-label" for="mobile">Mobile Phone <sup>*</sup></label>
+						  <input type="text" asp-for="PhoneNumber" placeholder="Mobile Phone" class="form-control">
+		      		</div>
+
+					  <div class="form-group">
+						  <label class="control-label" for="input_username">User Name <sup>*</sup></label>
+						  <input type="text" asp-for="UserName" placeholder="User Name" class="form-control">
+		      		</div>
+
+					  <div class="form-group">
+						  <label class="control-label" for="input_password">Password <sup>*</sup></label>
+						  <input type="password" asp-for="Password" placeholder="Password" class="form-control">
+		      		</div>
+
+					  <div class="form-group">
+						  <label class="control-label" for="input_confirm">Confirm Password <sup>*</sup></label>
+						  <input type="password" asp-for="ConfirmPassword" placeholder="Confirm Password" class="form-control">
+		      		</div>
+	            <div class="form-group">
+					<input type="hidden" name="email_create" value="1">
+                <input type="hidden" name="is_new_customer" value="1">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3" value="Register">Register</button>
+	            </div>
+	          </form>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="~/js/jquery.min.js"></script>
+  <script src="~/js/popper.js"></script>
+  <script src="~/js/bootstrap.min.js"></script>
+  <script src="~/js/mainLogin.js"></script>
+
+	</body>
+</html>
+
+
+

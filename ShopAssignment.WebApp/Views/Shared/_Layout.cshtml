@@ -39,11 +39,15 @@
         <div class="row bg-secondary py-2 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-dark" href="">FAQs</a>
+                    @if (User.Identity.IsAuthenticated)
+                {
+                    <a class="text-dark" href="">Welcome!<strong> @User.Identity.Name</strong></a>
                     <span class="text-muted px-2">|</span>
-                    <a class="text-dark" href="">Help</a>
-                    <span class="text-muted px-2">|</span>
-                    <a class="text-dark" href="">Support</a>
+                }
+                else
+                {
+                    <a class="text-dark" href="">Welcome!<strong> Guest!</strong></a>
+                }
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -131,8 +135,19 @@
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a class="nav-item nav-link" href="/@culture/Account/Login"><localize>Login</localize></a>
+                            @if (User.Identity.IsAuthenticated)
+                {
+                    <form action="/@culture/Account/Logout" method="post">
+                                    <button type="submit" style="padding-right:0;margin-top:10px;margin-bottom:0px;background:transparent;border:none;">
+                                        <span class="nav-item nav-link"><localize>Logout</localize></span>
+                                    </button>
+                                </form>
+                }
+                else
+                {
+                    <a class="nav-item nav-link" href="/@culture/Account/Login"><localize>Login</localize></a>
                             <a class="nav-item nav-link" href="/@culture/Account/Register"><localize>Register</localize></a>
+                }
                         </div>
                     </div>
                 </nav>
