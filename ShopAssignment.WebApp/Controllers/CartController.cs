@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ShopAssignment.ApiIntegration.Interface;
 using ShopAssignment.Utilities.Constants;
@@ -10,10 +11,14 @@ namespace ShopAssignment.WebApp.Controllers
     public class CartController : Controller
     {
         private readonly IProductApiClient _productApiClient;
+        private readonly IOrderApiClient _orderApiClient;
+        //private readonly UserManager<IdentityUser> _userManager;
 
-        public CartController(IProductApiClient productApiClient)
+        public CartController(IProductApiClient productApiClient, IOrderApiClient orderApiClient)
         {
             _productApiClient = productApiClient;
+            _orderApiClient = orderApiClient;
+            //_userManager = userManager;
         }
 
         public IActionResult Index()
@@ -27,7 +32,7 @@ namespace ShopAssignment.WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Checkout(CheckoutViewModel request)
+        public async Task<IActionResult> Checkout(CheckoutViewModel request)
         {
             var model = GetCheckoutViewModel();
             var orderDetails = new List<OrderDetailViewModel>();
@@ -36,7 +41,8 @@ namespace ShopAssignment.WebApp.Controllers
                 orderDetails.Add(new OrderDetailViewModel()
                 {
                     ProductId = item.ProductId,
-                    Quantity = item.Quantity
+                    Quantity = item.Quantity,
+                    Price = item.Price
                 });
             }
             var checkoutRequest = new CheckoutRequest()
@@ -48,6 +54,9 @@ namespace ShopAssignment.WebApp.Controllers
                 OrderDetails = orderDetails
             };
             //TODO: Add to API
+            //var user = await _userManager.GetUserAsync(HttpContext.User);
+            Guid id = Guid.Parse("69bd714f-9576-45ba-b5b7-f00649be00de");
+            var result = await _orderApiClient.Create(checkoutRequest, id);
             TempData["SuccessMsg"] = "Order puschased successful";
             return View(model);
         }

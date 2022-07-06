@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ShopAssignment.Application.Catalog.Categories;
+using ShopAssignment.Application.Catalog.Order;
 using ShopAssignment.Application.Catalog.Products;
 using ShopAssignment.Application.Common;
 using ShopAssignment.Application.System.Users;
@@ -29,6 +30,7 @@ builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
 builder.Services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<ISlideService, SlideService>();
+builder.Services.AddTransient<IOrderService, OrderService>();
 
 //builder.Services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
 //builder.Services.AddTransient<IValidator<RegisterRequest>, RegisterRequestValidator>();
