@@ -34,6 +34,7 @@
 </head>
 
 <body>
+    <input type="hidden" id="hidCulture" value="@culture"/>
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-2 px-xl-5">
@@ -92,13 +93,9 @@
                 <language-nav language-label="NativeName"
                                       cookie-handler-url="@(Url.Action("SetCultureCookie", "Home", new { area= "", cltr="{0}", returnUrl="{1}" }))" class="btn border">
                         </language-nav>
-                <a href="" class="btn border">
-                    <i class="fas fa-heart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-                <a href="" class="btn border">
+                <a id="myCart" href="@culture/cart" class="btn border">
                     <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
+                    <span id="lbl_number_of_items" class="badge">0</span>
                 </a>
             </div>
         </div>
@@ -249,6 +246,12 @@
 
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
+    <script src="/js/site.js"></script>
+    <script>
+        var site = new SiteController();
+        site.initialize();
+    </script>
+    @RenderSection("scripts", required: false)
 </body>
 
 </html>

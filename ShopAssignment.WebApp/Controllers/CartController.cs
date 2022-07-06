@@ -77,7 +77,7 @@ namespace ShopAssignment.WebApp.Controllers
                 quantity = currentCart.First(x => x.ProductId == id).Quantity + 1;
             }
 
-            var cartItem = new CartItemViewModel()
+             var cartItem = new CartItemViewModel()
             {
                 ProductId = id,
                 Description = product.Description,
