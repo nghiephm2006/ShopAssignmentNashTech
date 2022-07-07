@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using ShopAssignment.ApiIntegration.Interface;
+using ShopAssignment.Utilities.Constants;
 using ShopAssignment.ViewModels.Common;
 using ShopAssignment.ViewModels.Paging;
 using ShopAssignment.ViewModels.System.Users;
@@ -37,7 +38,7 @@ namespace ShopAssignment.ApiIntegration
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
             var client = _httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+            client.BaseAddress = new Uri(_configuration[SystemConstants.AppSettings.BaseAddress]);
             var response = await client.PostAsync("/api/users/authenticate", httpContent);
             if (response.IsSuccessStatusCode)
             {

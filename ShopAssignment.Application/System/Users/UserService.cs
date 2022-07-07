@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using eShopSolution.ViewModels.Common;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using ShopAssignment.Data.Entities;
+using ShopAssignment.ViewModels.Common;
 using ShopAssignment.ViewModels.System.Users.Request;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -24,21 +26,20 @@ namespace ShopAssignment.Application.System.Users
             _config = config;
         }
 
-        public async Task<string> Authenticate(LoginRequest request)
+        public async Task<ApiResult<string>> Authenticate(LoginRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
-            if (user == null)
-            {
-                return null;
-            }
+            if (user == null) return new ApiErrorResult<string>("Tài khoản không tồn tại");
+
             var result = await _signInManager.PasswordSignInAsync(user, request.Password, request.RememberMe, true);
-            //if (!result.Succeeded)
-            //{
-            //    return null;
-            //}
-            var roles = _userManager.GetRolesAsync(user);
-            var claims = new[] {
-            new Claim(ClaimTypes.Email,user.Email),
+            if (!result.Succeeded)
+            {
+                return new ApiErrorResult<string>("Đăng nhập không đúng");
+            }
+            var roles = await _userManager.GetRolesAsync(user);
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Email,user.Email),
                 new Claim(ClaimTypes.GivenName,user.FirstName),
                 new Claim(ClaimTypes.Role, string.Join(";",roles)),
                 new Claim(ClaimTypes.Name, request.UserName)
@@ -52,7 +53,7 @@ namespace ShopAssignment.Application.System.Users
                 expires: DateTime.Now.AddHours(3),
                 signingCredentials: creds);
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return new ApiSuccessResult<string>(new JwtSecurityTokenHandler().WriteToken(token));
         }
 
         public async Task<bool> Register(RegisterRequest request)

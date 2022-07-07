@@ -141,6 +141,9 @@
   <data name="Login" xml:space="preserve">
     <value>Đăng nhập</value>
   </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Đăng Xuất</value>
+  </data>
   <data name="productUrl" xml:space="preserve">
     <value>san-pham</value>
   </data>

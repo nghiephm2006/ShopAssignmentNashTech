@@ -57,6 +57,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
              });
 builder.Services.AddSession(options =>
 {
+    options.Cookie.IsEssential = true;
     options.IdleTimeout = TimeSpan.FromMinutes(30);
 });
 
@@ -66,6 +67,7 @@ builder.Services.AddTransient<ISlideApiClient, SlideApiClient>();
 builder.Services.AddTransient<IProductApiClient, ProductApiClient>();
 builder.Services.AddTransient<ICategoryApiClient, CategoryApiClient>();
 builder.Services.AddTransient<IUserApiClient, UserApiClient>();
+builder.Services.AddTransient<IOrderApiClient, OrderApiClient>();
 
 var app = builder.Build();
 
@@ -79,6 +81,7 @@ if (!app.Environment.IsDevelopment())
 
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseAuthentication();
 
 app.UseRouting();
 
