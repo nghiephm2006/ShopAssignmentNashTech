@@ -9,6 +9,8 @@ namespace ShopAssignment.Data.Entities
         public string LastName { get; set; }
 
         public DateTime Dob { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpiryTime { get; set; }
 
         public List<Cart> Carts { get; set; }
 

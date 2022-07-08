@@ -10,10 +10,12 @@ namespace ShopAssignment.WebAPI.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IConfiguration _configuration;
 
-        public UsersController(IUserService userService)
+        public UsersController(IUserService userService, IConfiguration configuration)
         {
             _userService = userService;
+            _configuration = configuration;
         }
 
         [HttpPost("authenticate")]
@@ -28,11 +30,36 @@ namespace ShopAssignment.WebAPI.Controllers
 
             if (string.IsNullOrEmpty(result.ResultObj))
             {
-                return BadRequest(result);
+                return Unauthorized("User is invalid!");
             }
-            return Ok(result);
-        }
+            var user = await _userService.GetByUserName(request.UserName);
+            var refreshToken = user.RefreshToken;
+            if (refreshToken == null || DateTime.Now >= user.RefreshTokenExpiryTime)
+            {
+                refreshToken = _userService.GenerateRefreshToken();
+            }
 
+            var RefreshTokenValidityInDays = int.Parse(_configuration["Tokens:RefreshTokenVailidityInDays"]);
+
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(RefreshTokenValidityInDays);
+            var token = result.ResultObj;
+            if (result.IsSuccessed)
+                return Ok(new
+                {
+                    token,
+                    RefreshToken = user.RefreshToken
+                }) ;
+            return Unauthorized();
+        }
+        [HttpGet("{username}")]
+        public async Task<IActionResult> GetById(string username)
+        {
+            var user = await _userService.GetByUserName(username);
+            if (user == null)
+                return BadRequest("Cannot find product");
+            return Ok(user);
+        }
         [HttpPost("register")]
         [AllowAnonymous]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)

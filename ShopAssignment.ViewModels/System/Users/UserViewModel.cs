@@ -28,5 +28,7 @@ namespace ShopAssignment.ViewModels.System.Users
         public DateTime Dob { get; set; }
 
         public IList<string> Roles { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpiryTime { get; set; }
     }
 }

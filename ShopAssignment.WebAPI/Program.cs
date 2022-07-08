@@ -16,7 +16,9 @@ using ShopAssignment.Utilities.Constants;
 using ShopAssignment.ViewModels.System.Users.Validator;
 
 var builder = WebApplication.CreateBuilder(args);
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
+builder.Services.AddCors();
 builder.Services.AddDbContext<ShopAssignmentDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
 builder.Services.AddIdentity<AppUser, AppRole>()
     .AddEntityFrameworkStores<ShopAssignmentDBContext>()
@@ -110,6 +112,7 @@ app.UseStaticFiles();
 app.UseAuthentication();
 
 app.UseRouting();
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 app.UseAuthorization();
 
